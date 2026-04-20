@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080">
+  <defs>
+    <style>
+      .title { font: 700 30px Arial, sans-serif; fill: #17324d; }
+      .subtitle { font: 600 18px Arial, sans-serif; fill: #17324d; }
+      .boxTitle { font: 700 18px Arial, sans-serif; fill: #17324d; }
+      .body { font: 15px Arial, sans-serif; fill: #1f2937; }
+      .small { font: 13px Arial, sans-serif; fill: #374151; }
+      .arrow { stroke: #4b5563; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .dashed { stroke-dasharray: 8 6; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#4b5563" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#94a3b8" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="1080" fill="#f8fbff"/>
+  <text x="800" y="52" text-anchor="middle" class="title">NephroXNet Full Research Workflow</text>
+  <text x="800" y="82" text-anchor="middle" class="subtitle">Explainable four-class kidney CT classification with attention, baselines, and journal-model comparison</text>
+
+  <rect x="50" y="120" rx="20" ry="20" width="320" height="260" fill="#dbeafe" stroke="#60a5fa" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="210" y="155" text-anchor="middle" class="boxTitle">1. Dataset</text>
+  <text x="80" y="190" class="body">IEEE Dataport kidney CT dataset</text>
+  <text x="80" y="218" class="body">12,446 unique images</text>
+  <text x="80" y="246" class="body">Classes:</text>
+  <text x="100" y="272" class="small">• Normal: 5,077</text>
+  <text x="100" y="294" class="small">• Cyst: 3,709</text>
+  <text x="100" y="316" class="small">• Tumor: 2,283</text>
+  <text x="100" y="338" class="small">• Stone: 1,377</text>
+
+  <rect x="430" y="120" rx="20" ry="20" width="340" height="220" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="600" y="155" text-anchor="middle" class="boxTitle">2. Data Curation and Preprocessing</text>
+  <text x="458" y="188" class="small">• Duplicate and leakage checking</text>
+  <text x="458" y="212" class="small">• Stratified train/val/test split</text>
+  <text x="458" y="236" class="small">• Resize to B4 input scale</text>
+  <text x="458" y="260" class="small">• Intensity normalization</text>
+  <text x="458" y="284" class="small">• Class-aware augmentation</text>
+  <text x="458" y="308" class="small">• Class-balanced sampling for imbalanced classes</text>
+
+  <rect x="830" y="120" rx="20" ry="20" width="350" height="200" fill="#dcfce7" stroke="#4ade80" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="1005" y="155" text-anchor="middle" class="boxTitle">3. Experimental Protocol</text>
+  <text x="858" y="188" class="small">• 5-fold stratified cross-validation</text>
+  <text x="858" y="212" class="small">• Weighted categorical or focal loss</text>
+  <text x="858" y="236" class="small">• Early stopping and LR scheduling</text>
+  <text x="858" y="260" class="small">• Class-wise and macro metrics</text>
+  <text x="858" y="284" class="small">• Minority-class sensitivity analysis</text>
+  <text x="858" y="308" class="small">• Ablation study plan</text>
+
+  <rect x="1240" y="120" rx="20" ry="20" width="310" height="200" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="1395" y="155" text-anchor="middle" class="boxTitle">4. Comparison Group</text>
+  <text x="1268" y="188" class="small">Keras baselines:</text>
+  <text x="1288" y="212" class="small">• MobileNetV2</text>
+  <text x="1288" y="234" class="small">• ResNet50</text>
+  <text x="1288" y="256" class="small">• DenseNet121</text>
+  <text x="1288" y="278" class="small">• InceptionV3 / Xception</text>
+  <text x="1288" y="300" class="small">• EfficientNetB0 / B4</text>
+
+  <rect x="100" y="430" rx="24" ry="24" width="920" height="420" fill="#eef2ff" stroke="#818cf8" stroke-width="3" filter="url(#shadow)"/>
+  <text x="560" y="468" text-anchor="middle" class="boxTitle">5. Proposed Model: NephroXNet</text>
+  <text x="560" y="495" text-anchor="middle" class="small">Nephro eXplainable Network with B4 backbone and Attention</text>
+
+  <rect x="140" y="540" rx="18" ry="18" width="180" height="150" fill="#ffffff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="230" y="575" text-anchor="middle" class="boxTitle">Input CT</text>
+  <text x="160" y="608" class="small">Normalized image</text>
+  <text x="160" y="632" class="small">380×380 tensor</text>
+  <text x="160" y="656" class="small">Augmented during training</text>
+
+  <rect x="360" y="520" rx="18" ry="18" width="220" height="190" fill="#ffffff" stroke="#60a5fa" stroke-width="2"/>
+  <text x="470" y="555" text-anchor="middle" class="boxTitle">EfficientNet-B4 Stem</text>
+  <text x="388" y="586" class="small">Pretrained Keras backbone</text>
+  <text x="388" y="610" class="small">Top removed</text>
+  <text x="388" y="634" class="small">Middle and deep stage taps</text>
+  <text x="388" y="658" class="small">Feature reuse across scales</text>
+
+  <rect x="620" y="500" rx="18" ry="18" width="210" height="230" fill="#ffffff" stroke="#34d399" stroke-width="2"/>
+  <text x="725" y="535" text-anchor="middle" class="boxTitle">Dual Attention</text>
+  <text x="645" y="568" class="small">Channel attention</text>
+  <text x="645" y="592" class="small">Spatial attention</text>
+  <text x="645" y="616" class="small">Noise suppression</text>
+  <text x="645" y="640" class="small">Lesion-region emphasis</text>
+  <text x="645" y="664" class="small">Class-discriminative focus</text>
+
+  <rect x="870" y="520" rx="18" ry="18" width="110" height="190" fill="#ffffff" stroke="#a78bfa" stroke-width="2"/>
+  <text x="925" y="555" text-anchor="middle" class="boxTitle">Fusion</text>
+  <text x="890" y="588" class="small">Multi-scale</text>
+  <text x="890" y="612" class="small">feature merge</text>
+  <text x="890" y="636" class="small">GAP + GMP</text>
+
+  <rect x="540" y="750" rx="18" ry="18" width="245" height="90" fill="#ffffff" stroke="#fb7185" stroke-width="2"/>
+  <text x="650" y="785" text-anchor="middle" class="boxTitle">Primary Classifier</text>
+  <text x="565" y="812" class="small">Softmax: cyst / normal / stone / tumor</text>
+
+  <rect x="810" y="750" rx="18" ry="18" width="200" height="90" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+  <text x="900" y="785" text-anchor="middle" class="boxTitle">Ablation Set</text>
+  <text x="830" y="812" class="small">No-attention/no-weighting tests</text>
+
+  <rect x="1100" y="430" rx="24" ry="24" width="420" height="200" fill="#ecfccb" stroke="#84cc16" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1310" y="468" text-anchor="middle" class="boxTitle">6. Explainability Module</text>
+  <text x="1130" y="505" class="small">• Grad-CAM++ for class evidence</text>
+  <text x="1130" y="533" class="small">• Layer-wise Relevance Propagation</text>
+  <text x="1130" y="561" class="small">• Attention-map visualization</text>
+  <text x="1130" y="589" class="small">• Confidence-drop under salient masking</text>
+
+  <rect x="1100" y="690" rx="24" ry="24" width="420" height="220" fill="#fee2e2" stroke="#ef4444" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1310" y="728" text-anchor="middle" class="boxTitle">7. Evaluation and Outputs</text>
+  <text x="1130" y="765" class="small">• Accuracy, macro F1, ROC-AUC</text>
+  <text x="1130" y="793" class="small">• Minority-class sensitivity and false-negative review</text>
+  <text x="1130" y="821" class="small">• Confusion matrix and class-wise specificity</text>
+  <text x="1130" y="849" class="small">• Comparison with Keras baselines</text>
+  <text x="1130" y="877" class="small">• Discussion against recent journal models</text>
+
+  <path d="M370 210 L430 210" class="arrow"/>
+  <path d="M770 210 L830 210" class="arrow"/>
+  <path d="M1180 210 L1240 210" class="arrow"/>
+
+  <path d="M600 300 L600 430" class="arrow"/>
+  <path d="M1395 300 L1395 400 L1310 400 L1310 430" class="arrow dashed"/>
+  <path d="M1395 300 L1395 650 L1310 650 L1310 690" class="arrow dashed"/>
+
+  <path d="M320 615 L360 615" class="arrow"/>
+  <path d="M580 615 L620 615" class="arrow"/>
+  <path d="M830 615 L870 615" class="arrow"/>
+  <path d="M925 710 L900 750" class="arrow"/>
+  <path d="M925 710 L650 750" class="arrow"/>
+  <path d="M725 730 L1310 630" class="arrow dashed"/>
+  <path d="M760 795 L1100 795" class="arrow"/>
+
+  <text x="790" y="980" text-anchor="middle" class="subtitle">Outcome: Explainable, imbalance-aware, four-class kidney CT classifier ready for paper-level evaluation</text>
+</svg>

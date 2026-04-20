@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #16324f; }
+      .sub { font: 600 18px Arial, sans-serif; fill: #355070; }
+      .h { font: 700 18px Arial, sans-serif; fill: #16324f; }
+      .t { font: 15px Arial, sans-serif; fill: #1f3a56; }
+      .arrow { stroke: #355070; stroke-width: 3; fill: none; marker-end: url(#a); }
+    </style>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#355070"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="900" fill="#f8fbff"/>
+  <text x="800" y="58" text-anchor="middle" class="title">NephroXNet Simplified Workflow</text>
+  <text x="800" y="88" text-anchor="middle" class="sub">From benchmark validation to explainable kidney CT classification</text>
+
+  <rect x="80" y="180" rx="18" ry="18" width="260" height="160" fill="#e3f2fd" stroke="#64b5f6" stroke-width="2.5"/>
+  <text x="210" y="220" text-anchor="middle" class="h">1) Data Source</text>
+  <text x="105" y="250" class="t">MNIST / CIFAR-10 / CIFAR-100</text>
+  <text x="105" y="278" class="t">Then migrate to kidney CT</text>
+
+  <rect x="390" y="180" rx="18" ry="18" width="260" height="160" fill="#fff3e0" stroke="#ffb74d" stroke-width="2.5"/>
+  <text x="520" y="220" text-anchor="middle" class="h">2) Preprocessing</text>
+  <text x="415" y="250" class="t">Resize and normalize</text>
+  <text x="415" y="278" class="t">Split and augmentation</text>
+
+  <rect x="700" y="180" rx="18" ry="18" width="260" height="160" fill="#e8f5e9" stroke="#81c784" stroke-width="2.5"/>
+  <text x="830" y="220" text-anchor="middle" class="h">3) Model</text>
+  <text x="725" y="250" class="t">Modified EfficientNet-B4</text>
+  <text x="725" y="278" class="t">Channel attention, next dual attention</text>
+
+  <rect x="1010" y="180" rx="18" ry="18" width="260" height="160" fill="#ede7f6" stroke="#9575cd" stroke-width="2.5"/>
+  <text x="1140" y="220" text-anchor="middle" class="h">4) Explainability</text>
+  <text x="1035" y="250" class="t">Grad-CAM (implemented)</text>
+  <text x="1035" y="278" class="t">Grad-CAM++ and attention maps</text>
+
+  <rect x="1320" y="180" rx="18" ry="18" width="200" height="160" fill="#ffebee" stroke="#e57373" stroke-width="2.5"/>
+  <text x="1420" y="220" text-anchor="middle" class="h">5) Evaluation</text>
+  <text x="1340" y="250" class="t">Accuracy, Macro F1,</text>
+  <text x="1340" y="278" class="t">ROC-AUC, confusion matrix</text>
+
+  <path d="M340 260 L390 260" class="arrow"/>
+  <path d="M650 260 L700 260" class="arrow"/>
+  <path d="M960 260 L1010 260" class="arrow"/>
+  <path d="M1270 260 L1320 260" class="arrow"/>
+
+  <rect x="250" y="450" rx="20" ry="20" width="1100" height="230" fill="#ffffff" stroke="#90a4ae" stroke-width="2.5"/>
+  <text x="800" y="500" text-anchor="middle" class="h">Final Output</text>
+  <text x="320" y="545" class="t">- Explainable 4-class kidney CT classifier: cyst / normal / stone / tumor</text>
+  <text x="320" y="580" class="t">- Class-wise analysis with focus on minority stone class</text>
+  <text x="320" y="615" class="t">- Baseline vs modified EfficientNet-B4 comparison</text>
+
+  <path d="M800 340 L800 450" class="arrow"/>
+</svg>
