@@ -28,8 +28,8 @@
 
   <rect x="700" y="180" rx="18" ry="18" width="260" height="160" fill="#e8f5e9" stroke="#81c784" stroke-width="2.5"/>
   <text x="830" y="220" text-anchor="middle" class="h">3) Model</text>
-  <text x="725" y="250" class="t">Modified EfficientNet-B4</text>
-  <text x="725" y="278" class="t">Channel attention, next dual attention</text>
+  <text x="710" y="250" class="t">Modified EfficientNet-B4</text>
+  <text x="710" y="278" class="t">Channel attention, next dual attention</text>
 
   <rect x="1010" y="180" rx="18" ry="18" width="260" height="160" fill="#ede7f6" stroke="#9575cd" stroke-width="2.5"/>
   <text x="1140" y="220" text-anchor="middle" class="h">4) Explainability</text>
@@ -38,8 +38,8 @@
 
   <rect x="1320" y="180" rx="18" ry="18" width="200" height="160" fill="#ffebee" stroke="#e57373" stroke-width="2.5"/>
   <text x="1420" y="220" text-anchor="middle" class="h">5) Evaluation</text>
-  <text x="1340" y="250" class="t">Accuracy, Macro F1,</text>
-  <text x="1340" y="278" class="t">ROC-AUC, confusion matrix</text>
+  <text x="1330" y="250" class="t">Accuracy, Macro F1,</text>
+  <text x="1330" y="278" class="t">ROC-AUC, confusion matrix</text>
 
   <path d="M340 260 L390 260" class="arrow"/>
   <path d="M650 260 L700 260" class="arrow"/>

@@ -16,10 +16,10 @@
 ---
 
 ## Slide 3 - Modified EfficientNet-B4 and Attention Mechanism
-- Start from EfficientNet-B4 backbone.
-- Use channel attention baseline (`se` / `eca`) in current implementation.
-- Add spatial attention and multi-scale feature fusion in modified version.
-- Distillation code is optional and not required for core experiments.
+ Start from EfficientNetB4 backbone.
+ Use channel attention baseline (`se` / `eca`) in current implementation.
+ Add spatial attention and multiscale feature fusion in modified version.
+ Distillation code is optional and not required for core experiments.
 
 ---
 
